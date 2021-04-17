@@ -1,10 +1,10 @@
 import React from 'react';
 import { Navbar,Nav } from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 
 class Header extends React.Component{
     render(){
         return(
-            
             <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="#home">
               <img
@@ -17,8 +17,12 @@ class Header extends React.Component{
               React Bootstrap
             </Navbar.Brand>
             <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+            <LinkContainer to="/taketest">
+                <Nav.Link>About US</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/taketest">
+                <Nav.Link>Contact</Nav.Link>
+                </LinkContainer>
             </Nav>
             <Navbar.Brand>MEET PATEL</Navbar.Brand>
           </Navbar>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button,Form,Container,Col,Row } from 'react-bootstrap';
+import { Button,Form,Container,Col,ListGroup } from 'react-bootstrap';
 import './list.css';
 
 class List extends React.Component{
@@ -50,15 +50,16 @@ class List extends React.Component{
             <Container style={{marginTop: "20px"}}>
                 <Form>    
                 <Form.Control type="text" value={this.state.value} onChange={this.onChangeValue} placeholder="Text" />
+                <br/>
                 <Button variant="primary" onClick={this.onSubmitButton} type="button">Submit</Button>
                 </Form>
                 
                 <Col style={{marginTop: "20px"}}> 
-                <ul className="demo">
+                <ListGroup>
                 {list.map((data,index)=>{
-                   return <li key={index}>{data}<button value={data} onClick={this.deleteList}>Delete</button></li>
+                   return <ListGroup.Item key={index}>{data}<Button className="float-right" variant="danger" value={data} onClick={this.deleteList}>Delete</Button></ListGroup.Item>
                 })}
-                </ul>
+                </ListGroup>
                 </Col>
             </Container>
         )
