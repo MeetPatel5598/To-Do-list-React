@@ -6,6 +6,7 @@ import Pagenotfound from './Components/Error/Error';
 import About from './Components/AboutUs/About';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import React from 'react';
+import Footer from './Components/Footer/Footer';
 
 class App extends React.Component{
   render () {

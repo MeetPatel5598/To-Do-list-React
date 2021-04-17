@@ -25,6 +25,7 @@ class About extends React.Component{
                 <ListGroup.Item><b>Databases :</b> PostgreSQL, MySQL, MySQL Workbench and Microsoft SQL server.</ListGroup.Item>
                 <ListGroup.Item><b>Software Familiarity :</b> Microsoft Visual Studio, Android Studio, NetBeans, Slack, SQL,Visual Studio Code, Docker.
 </ListGroup.Item>
+<ListGroup.Item><br/><br/></ListGroup.Item>
             </ListGroup>
             
             </Col>
