@@ -2,11 +2,12 @@ import React from 'react';
 import { Button,Container,Col,ListGroup,InputGroup,FormControl,Card } from 'react-bootstrap';
 import './list.css';
 
+var today = new Date(),
+        time = today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+
 class List extends React.Component{
     constructor(props){
         super(props);
-        var today = new Date(),
-        time = today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         this.state = {
             list : [],
             value : '',
@@ -25,7 +26,8 @@ class List extends React.Component{
                 ...prevState,
               list : list,
               value: '',
-              showA : true
+              showA : true,
+              currentDateTime: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true }) 
             };
         });
     }
@@ -62,7 +64,7 @@ class List extends React.Component{
                 <Col style={{marginTop: "20px"}}> 
                 <ListGroup>
                 {list.map((data,index)=>{
-                   return <ListGroup.Item style={{marginTop: "20px"}} key={index}><h4>{data}</h4>
+                   return <ListGroup.Item style={{marginTop: "20px" , backgroundColor: "#d9d9d9"}} key={index}><h4>{data}</h4>
                    <hr/>
                    <small><b>{currentDateTime}</b></small>
                    <Button className="float-right" variant="danger" value={data} onClick={this.deleteList}>Delete</Button></ListGroup.Item>

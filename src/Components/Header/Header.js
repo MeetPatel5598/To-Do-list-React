@@ -17,10 +17,13 @@ class Header extends React.Component{
               React Bootstrap
             </Navbar.Brand>
             <Nav className="mr-auto">
-            <LinkContainer to="/taketest">
+            <LinkContainer to="/">
+                <Nav.Link>Home</Nav.Link>
+                </LinkContainer>
+            <LinkContainer to="/aboutus">
                 <Nav.Link>About US</Nav.Link>
                 </LinkContainer>
-                <LinkContainer to="/taketest">
+                <LinkContainer to="/contact">
                 <Nav.Link>Contact</Nav.Link>
                 </LinkContainer>
             </Nav>
