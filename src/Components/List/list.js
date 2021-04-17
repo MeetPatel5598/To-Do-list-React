@@ -1,14 +1,17 @@
 import React from 'react';
-import { Button,Form,Container,Col,ListGroup } from 'react-bootstrap';
+import { Button,Container,Col,ListGroup,InputGroup,FormControl,Card } from 'react-bootstrap';
 import './list.css';
 
 class List extends React.Component{
     constructor(props){
         super(props);
+        var today = new Date(),
+        time = today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         this.state = {
             list : [],
             value : '',
-            showA : false
+            showA : false,
+            currentDateTime: time
         }
         this.onSubmitButton = this.onSubmitButton.bind(this);
     }
@@ -44,20 +47,25 @@ class List extends React.Component{
     };
 
     render(){
-        const {list} = this.state;
+        const {list,currentDateTime} = this.state;
         
         return(
-            <Container style={{marginTop: "20px"}}>
-                <Form>    
-                <Form.Control type="text" value={this.state.value} onChange={this.onChangeValue} placeholder="Text" />
-                <br/>
-                <Button variant="primary" onClick={this.onSubmitButton} type="button">Submit</Button>
-                </Form>
+            <Container className="list-background">
+                <InputGroup className="mb-3">
+                    <FormControl type="text" value={this.state.value} onChange={this.onChangeValue} placeholder="Text"/>
+                    <InputGroup.Append>
+                    <Button variant="primary" onClick={this.onSubmitButton} type="button">Submit</Button>
+                    </InputGroup.Append>
+                </InputGroup>
+
                 
                 <Col style={{marginTop: "20px"}}> 
                 <ListGroup>
                 {list.map((data,index)=>{
-                   return <ListGroup.Item key={index}>{data}<Button className="float-right" variant="danger" value={data} onClick={this.deleteList}>Delete</Button></ListGroup.Item>
+                   return <ListGroup.Item style={{marginTop: "20px"}} key={index}><h4>{data}</h4>
+                   <hr/>
+                   <small><b>{currentDateTime}</b></small>
+                   <Button className="float-right" variant="danger" value={data} onClick={this.deleteList}>Delete</Button></ListGroup.Item>
                 })}
                 </ListGroup>
                 </Col>
