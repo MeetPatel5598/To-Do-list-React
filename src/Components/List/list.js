@@ -49,20 +49,14 @@ class List extends React.Component{
         return(
             <Container style={{marginTop: "20px"}}>
                 <Form>    
-                    <Row>
-                    <Col>
                 <Form.Control type="text" value={this.state.value} onChange={this.onChangeValue} placeholder="Text" />
-                    </Col>
-                    <Col>
                 <Button variant="primary" onClick={this.onSubmitButton} type="button">Submit</Button>
-                    </Col>
-                    </Row>
                 </Form>
                 
                 <Col style={{marginTop: "20px"}}> 
                 <ul className="demo">
                 {list.map((data,index)=>{
-                   return <li key={index}>{data}<button value={data} onClick={this.deleteList}>X</button></li>
+                   return <li key={index}>{data}<button value={data} onClick={this.deleteList}>Delete</button></li>
                 })}
                 </ul>
                 </Col>

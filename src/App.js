@@ -1,13 +1,10 @@
 import './App.css';
-import List from './Components/list';
+import Header from './Components/Header/Header';
+import List from './Components/List/list';
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <div className="row">
-        <List/>
-      </div>
-    </div>
+    <Header/>
   );
 }
 
