@@ -7,19 +7,11 @@ class Footer extends React.Component{
 
     render(){
         return(
-        <Container bg="dark" variant="dark" className="footer-style text-centered">
-            <Row>
-            <Col>
-            <SocialIcon url="linkedin.com/in/meet-patel-891005145" />
-            </Col>
-            <Col>
+        <div bg="dark" variant="dark" className="footer-style">
+            <SocialIcon url="https://www.linkedin.com/in/meet-patel-891005145/" />
             <SocialIcon url="https://www.instagram.com/meetpatel_0505/" />
-            </Col>
-            <Col>
             <SocialIcon url="https://www.facebook.com/profile.php?id=100001711333308" />
-            </Col>
-            </Row>
-        </Container>
+        </div>
         )
     }
 }

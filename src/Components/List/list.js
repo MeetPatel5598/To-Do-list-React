@@ -62,7 +62,7 @@ class List extends React.Component{
 
                 
                 <Col style={{marginTop: "20px"}}> 
-                <ListGroup>
+                <ListGroup className="list-height">
                 {list.map((data,index)=>{
                    return <ListGroup.Item style={{marginTop: "20px" , backgroundColor: "#d9d9d9"}} key={index}><h4>{data}</h4>
                    <hr/>

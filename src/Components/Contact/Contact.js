@@ -11,22 +11,22 @@ class Contact extends React.Component{
                 <Image src="meet.JPG"/>
             </Col>
           <Col>
-          <Form>
+          <Form action="https://formspree.io/f/xayanayz" method="POST">
           <Form.Group controlId="formGridAddress1">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" autoComplete="false"/>
+          <Form.Control type="text" required autoComplete="false"/>
         </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control type="email" required/>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>What is This About</Form.Label>
-              <Form.Control type="text" />
+              <Form.Control type="text" required/>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control as="textarea" rows={3} required/>
             </Form.Group>
           </Form>
           <Button variant="warning" type="submit">
